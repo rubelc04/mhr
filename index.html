@@ -6,20 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script> -->
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+   
     <script src="asset/font.js"></script>
 
-    <title>MHR Profile</title>
+    <title>rubelc04.github.io</title>
   </head>
   <body class="bg-dark">
 <div class="container bg-secondary border border-success p-4 mt-4 ">
        
     <div class="jumbotron bg-light">
-        <h1 class="display-4">Welcome to Mobarok Hossion Rubel Personal Profile</h1>
+        <Mobarok id="root" class="display-4"></Mobarok>
+     
         <hr class="my-4">
       </div>
-      
+    
+
+      <script type="text/babel">
+
+        class Mobarok extends React.Component {   
+          render() {
+            const props = this.props;
+            return (
+              <div>
+                <h1 className="text-success"> {props.children} </h1>
+                </div>
+            )
+          }
+        }
+        
+        ReactDOM.render(
+        <div>
+             <Mobarok>Welcome To <span class="text-warning"> &lt;	Mobarok &frasl; &gt; </span> Hossain Profile</Mobarok>
+        </div>,
+          document.getElementById('root')
+        );
+       
+      </script>
 
 
     
